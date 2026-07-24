@@ -64,6 +64,48 @@ main {
   transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
 }
 
+.login-form {
+  width: min(360px, calc(100vw - 40px));
+  display: grid;
+  gap: 10px;
+}
+
+.login-form label {
+  margin-top: 4px;
+  color: #a7a7a7;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.login-form input:not([type="hidden"]) {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #303030;
+  border-radius: 8px;
+  outline: none;
+  background: #0c0c0c;
+  color: #fff;
+  font: inherit;
+}
+
+.login-form input:focus {
+  border-color: #777;
+}
+
+.login-form .sign-in {
+  width: 100%;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.login-error {
+  min-height: 1.2em;
+  margin: 2px 0 0;
+  color: #ff7777;
+  font-size: 0.82rem;
+}
+
 .sign-in svg {
   width: 26px;
   height: 26px;

@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Sign in to Aryeh Lab.">
     <meta name="theme-color" content="#000000">
-    <title>Aryeh Lab</title>
+    <title>Sign in — Aryeh Lab</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/favicon_io/favicon-al-white-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/public/assets/favicon_io/favicon-al-white-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/favicon_io/favicon-al-32.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/assets/favicon_io/favicon-al-16.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/favicon_io/favicon-al-white-32.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/assets/favicon_io/favicon-al-white-16.png" media="(prefers-color-scheme: dark)">
     <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/favicon_io/favicon-al-white-180.png">
     <link rel="manifest" href="/public/assets/favicon_io/site.webmanifest">
-    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="/public/styles.css?v=2">
   </head>
   <body>
     <div class="circuit circuit-left" aria-hidden="true">
@@ -27,13 +23,34 @@
     <main>
       <img class="logo" src="/public/assets/logo%20dark.png" alt="Aryeh Lab">
 
-      <a class="sign-in" href="/dashboard">
-        <span>Enter dashboard</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M5 12h13M13 6l6 6-6 6"></path>
-        </svg>
-      </a>
+      <form class="login-form" action="/login" method="post">
+        <input id="next" name="next" type="hidden">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text"
+          autocomplete="username" required autofocus>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password"
+          autocomplete="current-password" required>
+        <p id="login-error" class="login-error" aria-live="polite"></p>
+        <button class="sign-in" type="submit">
+          <span>Enter dashboard</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h13M13 6l6 6-6 6"></path>
+          </svg>
+        </button>
+      </form>
     </main>
 
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      document.querySelector("#next").value = params.get("next") || "";
+      const error = params.get("error");
+      const message = document.querySelector("#login-error");
+      if (error === "locked") {
+        message.textContent = "Too many attempts. Try again in 15 minutes.";
+      } else if (error) {
+        message.textContent = "Incorrect username or password.";
+      }
+    </script>
   </body>
 </html>
