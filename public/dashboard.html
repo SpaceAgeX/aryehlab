@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aryeh Lab project dashboard.">
+    <meta name="theme-color" content="#000000">
+    <title>Dashboard — Aryeh Lab</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/favicon_io/favicon-al-white-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/assets/favicon_io/favicon-al-white-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/favicon_io/favicon-al-32.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/assets/favicon_io/favicon-al-16.png" media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/favicon_io/favicon-al-white-180.png">
+    <link rel="manifest" href="/public/assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="/public/dashboard.css">
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/" aria-label="Aryeh Lab home">
+        <img src="/public/assets/favicon_io/favicon-al-white-192.png" alt="">
+        <span>Aryeh Lab</span>
+      </a>
+      <div class="status"><i aria-hidden="true"></i> Systems online</div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">Project control</p>
+        <h1>Dashboard</h1>
+        <p>Select a project to open its workspace.</p>
+      </section>
+
+      <section class="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title">Projects</h2>
+          <span>01 active</span>
+        </div>
+
+        <div class="project-grid">
+          <a class="project-card active" href="https://timelapse.aryehlab.com">
+            <div class="card-top">
+              <span class="project-number">01</span>
+              <span class="project-state"><i aria-hidden="true"></i> Online</span>
+            </div>
+
+            <div class="camera-graphic" aria-hidden="true">
+              <div class="camera">
+                <span></span>
+              </div>
+              <i class="scan-line"></i>
+            </div>
+
+            <div class="card-copy">
+              <p>Raspberry Pi / Camera</p>
+              <h3>Timelapse</h3>
+              <span class="open-project">Open project <b aria-hidden="true">↗</b></span>
+            </div>
+          </a>
+
+          <article class="project-card placeholder">
+            <div class="card-top">
+              <span class="project-number">02</span>
+              <span>Available slot</span>
+            </div>
+            <div class="plus" aria-hidden="true">+</div>
+            <div class="card-copy">
+              <p>Future project</p>
+              <h3>Coming soon</h3>
+            </div>
+          </article>
+
+          <article class="project-card placeholder">
+            <div class="card-top">
+              <span class="project-number">03</span>
+              <span>Available slot</span>
+            </div>
+            <div class="plus" aria-hidden="true">+</div>
+            <div class="card-copy">
+              <p>Future project</p>
+              <h3>Coming soon</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Aryeh Lab</span>
+      <a href="/">Return home</a>
+    </footer>
+  </body>
+</html>

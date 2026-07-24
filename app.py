@@ -17,6 +17,11 @@ async def index() -> FileResponse:
     return FileResponse(PUBLIC_DIR / "index.html")
 
 
+@app.get("/dashboard", include_in_schema=False)
+async def dashboard() -> FileResponse:
+    return FileResponse(PUBLIC_DIR / "dashboard.html")
+
+
 @app.get("/health")
 async def health() -> dict[str, str]:
     return {"status": "online"}
