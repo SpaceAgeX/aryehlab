@@ -17,4 +17,4 @@ Open `http://127.0.0.1:8000`.
 The app is intended to run behind a Cloudflare Tunnel:
 
 - `aryehlab.com` and `www.aryehlab.com` → this landing page
-- `timelapse.aryehlab.com` → the Raspberry Pi timelapse service
+- `printercam.aryehlab.com` → the Raspberry Pi timelapse service
